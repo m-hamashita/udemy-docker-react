@@ -5,7 +5,6 @@ services:
 before_install:
     - docker build -t mpeg/udemy-docker-react -f Dockerfile.dev .
 
-
 script:
     - docker run -e CI=true mpeg/udemy-docker-react npm run test
 
@@ -13,7 +12,7 @@ deploy:
     provider: elasticbeanstalk
     region: "ap-northeast-1"
     app: "hamashita-udemy-docker"
-    env: "HamashitaUdemyDocker-env"
+    env: "HamashitaUdemyDocker-env-1"
     bucket_name: "elasticbeanstalk-ap-northeast-1-085107194442"
     bucket_path: "hamashita-docker"
     on:
